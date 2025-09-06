@@ -1,0 +1,72 @@
+# Jekyll Configuration for GitHub Pages
+
+# Site settings
+title: "Home Paintings Gallery"
+description: "Beautiful original paintings for your home. Discover unique artwork that transforms your living space."
+baseurl: "" # Leave empty if this is your main GitHub Pages site
+url: "https://yourusername.github.io" # Replace with your GitHub Pages URL
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+# Plugins (GitHub Pages safe)
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Include files that start with underscores
+include:
+  - _pages
+
+# SEO settings
+author: "Artist Name" # Replace with actual artist name
+twitter:
+  username: "yourusername" # Replace with actual Twitter username
+facebook:
+  app_id: 1234567890 # Replace with actual Facebook App ID if you have one
+
+# Social media profiles
+social:
+  name: "Artist Name"
+  links:
+    - https://instagram.com/yourusername
+    - https://facebook.com/yourusername
+    - https://twitter.com/yourusername
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+      author: "Artist Name"
+
+# Sass configuration
+sass:
+  sass_dir: assets/css
+  style: compressed
+
+# Collections (for future expansion)
+collections:
+  paintings:
+    output: true
+    permalink: /:collection/:name/
+
+# Pagination (if you add a blog)
+paginate: 10
+paginate_path: "/blog/page:num/"
+
+# Timezone
+timezone: America/New_York # Adjust to your timezone
