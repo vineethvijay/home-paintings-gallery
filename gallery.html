@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery | Painted by Aamy</title>
+    <meta name="description" content="Browse Aamy's collection of beautiful original paintings. Each piece is carefully crafted to add character to your living space.">
+    <meta name="keywords" content="art gallery, paintings, original art, wall art, home decor, Aamy artist">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Gallery | Painted by Aamy">
+    <meta property="og:description" content="Browse Aamy's collection of beautiful original paintings.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/featured-painting.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <h1>Painted by Aamy</h1>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="gallery.html" class="nav-link active">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Gallery</h1>
+            <p class="page-subtitle">Each piece is carefully crafted to add character to your living space</p>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-page">
+        <div class="container">
+            <!-- Filter Options -->
+            <div class="gallery-filters">
+                <button class="filter-btn active" data-filter="all">All Paintings</button>
+                <button class="filter-btn" data-filter="featured">Featured</button>
+                <button class="filter-btn" data-filter="acrylic">Acrylic</button>
+                <button class="filter-btn" data-filter="oil">Oil</button>
+                <button class="filter-btn" data-filter="watercolor">Watercolor</button>
+            </div>
+            
+            <div class="gallery-grid" id="galleryGrid">
+                <!-- Gallery items will be populated by JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Painted by Aamy</h3>
+                    <p>Original artwork for your home</p>
+                </div>
+                <div class="footer-links">
+                    <a href="gallery.html">Gallery</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                    <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                    <a href="#" class="social-link" aria-label="Email">✉️</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Painted by Aamy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Painting Modal -->
+    <div class="modal" id="paintingModal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <div class="modal-image">
+                    <img id="modalImage" src="" alt="">
+                </div>
+                <div class="modal-info">
+                    <h3 id="modalTitle"></h3>
+                    <p id="modalDescription"></p>
+                    <div class="modal-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Size:</span>
+                            <span id="modalSize"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Medium:</span>
+                            <span id="modalMedium"></span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Price:</span>
+                            <span id="modalPrice" class="price"></span>
+                        </div>
+                    </div>
+                    <button class="inquiry-button" onclick="openInquiry()">Inquire About This Piece</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

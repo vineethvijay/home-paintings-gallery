@@ -1,62 +1,62 @@
-// Painting collection - customize these details to match your actual artwork
+// Painting collection - Van Gogh inspired artwork by Aamy
 const paintings = [
     {
         id: 1,
-        title: "Golden Hour Serenity",
-        description: "A warm, luminous painting capturing the peaceful beauty of golden hour light. The soft, glowing tones create a welcoming atmosphere perfect for any living space.",
-        price: "$280",
-        size: "18\" x 24\"",
-        medium: "Acrylic on Canvas",
+        title: "Starry Night Dreams",
+        description: "A mesmerizing interpretation of the night sky with swirling clouds and brilliant stars. This iconic composition brings celestial wonder and movement to any space, perfect for creating a focal point that inspires imagination.",
+        price: "$450",
+        size: "24\" x 30\"",
+        medium: "Oil on Canvas",
         image: "assets/images/painting1.jpg",
         featured: true
     },
     {
         id: 2,
-        title: "Tranquil Waters",
-        description: "Soothing blues and gentle brushstrokes evoke the calming essence of peaceful waters. Ideal for creating a serene focal point in bedrooms or meditation spaces.",
-        price: "$220",
-        size: "16\" x 20\"",
-        medium: "Acrylic on Canvas",
+        title: "Wheat Field Serenity",
+        description: "Golden wheat fields under a dramatic sky, capturing the beauty of rural landscapes. The dynamic brushwork and warm earth tones create a sense of movement and natural harmony ideal for living spaces.",
+        price: "$380",
+        size: "20\" x 28\"",
+        medium: "Oil on Canvas",
         image: "assets/images/painting2.jpg",
-        featured: false
+        featured: true
     },
     {
         id: 3,
-        title: "Autumn Whispers",
-        description: "Rich earth tones and delicate details capture the quiet beauty of autumn. This piece brings the warmth of nature indoors with sophisticated elegance.",
-        price: "$350",
-        size: "20\" x 24\"",
+        title: "The Olive Grove",
+        description: "Peaceful olive trees with characteristic twisted trunks and silvery leaves. The interplay of light and shadow creates a Mediterranean atmosphere that brings tranquility and natural beauty indoors.",
+        price: "$420",
+        size: "22\" x 26\"",
         medium: "Oil on Canvas",
         image: "assets/images/painting3.jpg",
         featured: true
     },
     {
         id: 4,
-        title: "Botanical Dreams",
-        description: "Delicate florals rendered with contemporary flair. The soft color palette and organic forms add natural beauty and feminine grace to any room.",
-        price: "$240",
-        size: "14\" x 18\"",
-        medium: "Watercolor on Paper",
+        title: "Pink Orchard Blossoms",
+        description: "Delicate pink blossoms on flowering fruit trees, celebrating the renewal of spring. The soft pastels and gentle brushwork create a romantic, uplifting atmosphere perfect for bedrooms or intimate spaces.",
+        price: "$360",
+        size: "18\" x 24\"",
+        medium: "Oil on Canvas",
         image: "assets/images/painting4.jpg",
         featured: false
     },
     {
         id: 5,
-        title: "Misty Morning",
-        description: "Ethereal landscape with soft, dreamy qualities that transport viewers to peaceful mornings in nature. Perfect for creating a calming sanctuary at home.",
-        price: "$300",
-        size: "18\" x 24\"",
+        title: "The Sower at Sunset",
+        description: "A solitary figure sowing seeds against a magnificent sunset backdrop. This powerful composition speaks to themes of hope, growth, and the eternal cycle of life, making it a meaningful addition to any home.",
+        price: "$400",
+        size: "20\" x 24\"",
         medium: "Oil on Canvas",
         image: "assets/images/painting5.jpg",
         featured: true
     },
     {
         id: 6,
-        title: "Harmony in Motion",
-        description: "Contemporary abstract with flowing lines and balanced composition. The sophisticated color palette complements modern home decor beautifully.",
-        price: "$260",
-        size: "16\" x 20\"",
-        medium: "Acrylic on Canvas",
+        title: "House at Auvers",
+        description: "A charming countryside home with distinctive thatched roof and rustic charm. The bold colors and expressive brushwork capture the essence of rural French architecture and peaceful village life.",
+        price: "$340",
+        size: "18\" x 22\"",
+        medium: "Oil on Canvas",
         image: "assets/images/painting6.jpg",
         featured: false
     }
@@ -78,6 +78,8 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeNavigation();
     initializeScrollAnimations();
     initializeSmoothScrolling();
+    initializeGalleryFilters();
+    initializeContactFormPrefill();
 });
 
 // Load gallery items
@@ -172,26 +174,13 @@ function closeModal() {
 
 function openInquiry() {
     closeModal();
-    // Scroll to contact form
-    document.getElementById('contact').scrollIntoView({ 
-        behavior: 'smooth' 
-    });
     
-    // Pre-fill the form
-    setTimeout(() => {
-        const inquirySelect = document.getElementById('inquiry');
-        const messageField = document.getElementById('message');
-        
-        if (inquirySelect) {
-            inquirySelect.value = 'purchase';
-        }
-        
-        if (messageField) {
-            const paintingTitle = document.getElementById('modalTitle').textContent;
-            messageField.value = `Hi! I'm interested in "${paintingTitle}". Could you please provide more details about availability and shipping?`;
-            messageField.focus();
-        }
-    }, 500);
+    // Get painting title for pre-filling
+    const paintingTitle = document.getElementById('modalTitle').textContent;
+    
+    // Redirect to contact page with painting info
+    const contactUrl = `contact.html?painting=${encodeURIComponent(paintingTitle)}`;
+    window.location.href = contactUrl;
 }
 
 // Contact form functionality
@@ -438,3 +427,80 @@ function preloadImages() {
 
 // Initialize preloading
 preloadImages();
+
+// Gallery filter functionality
+function initializeGalleryFilters() {
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    
+    filterButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            // Filter gallery
+            const filter = this.dataset.filter;
+            filterGallery(filter);
+        });
+    });
+}
+
+// Enhanced filter functionality
+function filterGallery(category = 'all') {
+    const items = document.querySelectorAll('.gallery-item');
+    
+    items.forEach(item => {
+        const paintingId = parseInt(item.dataset.paintingId);
+        const painting = paintings.find(p => p.id === paintingId);
+        
+        let shouldShow = false;
+        
+        if (category === 'all') {
+            shouldShow = true;
+        } else if (category === 'featured' && painting.featured) {
+            shouldShow = true;
+        } else if (category === 'acrylic' && painting.medium.toLowerCase().includes('acrylic')) {
+            shouldShow = true;
+        } else if (category === 'oil' && painting.medium.toLowerCase().includes('oil')) {
+            shouldShow = true;
+        } else if (category === 'watercolor' && painting.medium.toLowerCase().includes('watercolor')) {
+            shouldShow = true;
+        }
+        
+        if (shouldShow) {
+            item.style.display = 'block';
+            item.classList.add('fade-in');
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+// Contact form pre-fill functionality
+function initializeContactFormPrefill() {
+    // Check if we're on the contact page and have painting info in URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const paintingName = urlParams.get('painting');
+    
+    if (paintingName && contactForm) {
+        setTimeout(() => {
+            const inquirySelect = document.getElementById('inquiry');
+            const messageField = document.getElementById('message');
+            const subjectField = document.getElementById('subject');
+            
+            if (inquirySelect) {
+                inquirySelect.value = 'purchase';
+            }
+            
+            if (subjectField) {
+                subjectField.value = `Inquiry about "${paintingName}"`;
+            }
+            
+            if (messageField) {
+                messageField.value = `Hi Aamy! I'm interested in "${paintingName}". Could you please provide more details about availability, shipping, and any additional information about this piece?`;
+                messageField.focus();
+            }
+        }, 500);
+    }
+}

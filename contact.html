@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | Painted by Aamy</title>
+    <meta name="description" content="Get in touch with Aamy for custom paintings, purchase inquiries, or general questions about original artwork.">
+    <meta name="keywords" content="contact artist, custom paintings, art inquiry, purchase art, commission artwork">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Contact | Painted by Aamy">
+    <meta property="og:description" content="Get in touch with Aamy for custom paintings and purchase inquiries.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/featured-painting.jpg">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <a href="index.html" class="brand-link">
+                    <h1>Painted by Aamy</h1>
+                </a>
+            </div>
+            <div class="nav-menu">
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="contact.html" class="nav-link active">Contact</a>
+            </div>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">Get in Touch</h1>
+            <p class="page-subtitle">Interested in a piece or have a custom request? Let's talk!</p>
+        </div>
+    </section>
+
+    <!-- Contact Content -->
+    <section class="contact-page">
+        <div class="container">
+            <div class="contact-content">
+                <div class="contact-info">
+                    <h2>Let's Create Something Beautiful Together</h2>
+                    <p class="contact-intro">Whether you're interested in an existing piece or looking for something custom-made for your space, I'd love to hear from you.</p>
+                    
+                    <div class="contact-services">
+                        <div class="contact-item">
+                            <div class="contact-icon">🎨</div>
+                            <div class="contact-details">
+                                <h3>Commission Work</h3>
+                                <p>Custom paintings tailored to your space, style, and color preferences. Perfect for creating a truly unique piece for your home.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">💰</div>
+                            <div class="contact-details">
+                                <h3>Pricing & Availability</h3>
+                                <p>Affordable pricing starting from $220 for original pieces. Inquire about specific paintings or discuss custom work pricing.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="contact-item">
+                            <div class="contact-icon">📦</div>
+                            <div class="contact-details">
+                                <h3>Shipping & Delivery</h3>
+                                <p>Secure packaging and careful shipping available worldwide. Local delivery options may be available in some areas.</p>
+                            </div>
+                        </div>
+
+                        <div class="contact-item">
+                            <div class="contact-icon">⏱️</div>
+                            <div class="contact-details">
+                                <h3>Turnaround Time</h3>
+                                <p>Existing pieces ship within 3-5 business days. Custom commissions typically take 2-4 weeks depending on size and complexity.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form-section">
+                    <h2>Send Me a Message</h2>
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Your Name *</label>
+                                <input type="text" id="name" name="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Your Email *</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Phone Number (Optional)</label>
+                            <input type="tel" id="phone" name="phone">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="inquiry">What can I help you with? *</label>
+                            <select id="inquiry" name="inquiry" required>
+                                <option value="">Please select...</option>
+                                <option value="purchase">Purchase Existing Piece</option>
+                                <option value="commission">Commission Custom Work</option>
+                                <option value="pricing">Pricing Inquiry</option>
+                                <option value="shipping">Shipping Question</option>
+                                <option value="general">General Inquiry</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Subject</label>
+                            <input type="text" id="subject" name="subject" placeholder="Brief subject line">
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Your Message *</label>
+                            <textarea id="message" name="message" rows="6" required placeholder="Tell me about what you're looking for, your space, color preferences, or any questions you have..."></textarea>
+                        </div>
+                        
+                        <button type="submit" class="submit-button">Send Message</button>
+                        
+                        <p class="form-note">* Required fields. I typically respond within 24 hours.</p>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Alternative Contact Methods -->
+            <div class="contact-alternatives">
+                <h2>Other Ways to Connect</h2>
+                <div class="alternative-methods">
+                    <div class="method">
+                        <h3>📧 Email Direct</h3>
+                        <p>Prefer email? Send me a message directly at:</p>
+                        <a href="mailto:aamy@example.com" class="contact-link">aamy@example.com</a>
+                    </div>
+                    <div class="method">
+                        <h3>📱 Social Media</h3>
+                        <p>Follow my work and see behind-the-scenes content:</p>
+                        <div class="social-links">
+                            <a href="#" class="social-link">Instagram</a>
+                            <a href="#" class="social-link">Facebook</a>
+                        </div>
+                    </div>
+                    <div class="method">
+                        <h3>💬 Quick Questions</h3>
+                        <p>Have a quick question about a specific piece?</p>
+                        <p>Reference the painting title in your message for faster response.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>Painted by Aamy</h3>
+                    <p>Original artwork for your home</p>
+                </div>
+                <div class="footer-links">
+                    <a href="gallery.html">Gallery</a>
+                    <a href="about.html">About</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link" aria-label="Instagram">📷</a>
+                    <a href="#" class="social-link" aria-label="Facebook">📘</a>
+                    <a href="#" class="social-link" aria-label="Email">✉️</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Painted by Aamy. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="assets/js/script.js"></script>
+</body>
+</html>
