@@ -1,6 +1,6 @@
-# Home Paintings Gallery Website
+# Painted by Aamy - Art Gallery Website
 
-A beautiful, responsive GitHub Pages website to showcase and sell home paintings. Features a modern design inspired by premium gallery websites with an aesthetic similar to Gymshark's gallery view.
+A beautiful, responsive GitHub Pages website to showcase and sell Aamy's original paintings. Features a modern design inspired by premium gallery websites with an aesthetic similar to Gymshark's gallery view.
 
 ## Features
 

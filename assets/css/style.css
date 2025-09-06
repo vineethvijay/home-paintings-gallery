@@ -49,6 +49,20 @@ body {
     color: #2c2c2c;
 }
 
+.brand-link {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s ease;
+}
+
+.brand-link:hover {
+    color: #8b7355;
+}
+
+.brand-link:hover h1 {
+    color: #8b7355;
+}
+
 .nav-menu {
     display: flex;
     gap: 40px;

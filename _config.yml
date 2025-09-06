@@ -1,8 +1,8 @@
 # Jekyll Configuration for GitHub Pages
 
 # Site settings
-title: "Home Paintings Gallery"
-description: "Beautiful original paintings for your home. Discover unique artwork that transforms your living space."
+title: "Painted by Aamy"
+description: "Beautiful original paintings by Aamy. Discover unique artwork that transforms your living space."
 baseurl: "" # Leave empty if this is your main GitHub Pages site
 url: "https://yourusername.github.io" # Replace with your GitHub Pages URL
 
@@ -30,7 +30,7 @@ include:
   - _pages
 
 # SEO settings
-author: "Artist Name" # Replace with actual artist name
+author: "Aamy" # Artist name
 twitter:
   username: "yourusername" # Replace with actual Twitter username
 facebook:
@@ -38,7 +38,7 @@ facebook:
 
 # Social media profiles
 social:
-  name: "Artist Name"
+  name: "Aamy"
   links:
     - https://instagram.com/yourusername
     - https://facebook.com/yourusername
@@ -51,7 +51,7 @@ defaults:
       type: "pages"
     values:
       layout: "default"
-      author: "Artist Name"
+      author: "Aamy"
 
 # Sass configuration
 sass:
