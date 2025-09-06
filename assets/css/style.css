@@ -214,7 +214,25 @@ body {
 
 .gallery-item:hover {
     transform: translateY(-8px);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.gallery-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 0%, rgba(255, 215, 0, 0.1) 50%, transparent 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.gallery-item:hover::before {
+    opacity: 1;
 }
 
 .gallery-item img {
@@ -233,11 +251,12 @@ body {
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.9));
     color: white;
-    padding: 30px 20px 20px;
+    padding: 40px 20px 20px;
     transform: translateY(100%);
     transition: transform 0.3s ease;
+    z-index: 2;
 }
 
 .gallery-item:hover .gallery-overlay {
@@ -245,21 +264,50 @@ body {
 }
 
 .gallery-title {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     font-weight: 600;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
 }
 
 .gallery-price {
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: #8b7355;
+    font-size: 1.4rem;
+    font-weight: 800;
+    color: #ffd700;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9);
+    border: 2px solid #ffd700;
+    box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+    transition: all 0.3s ease;
+    animation: priceGlow 2s ease-in-out infinite alternate;
+}
+
+.gallery-price:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.6);
+}
+
+@keyframes priceGlow {
+    0% {
+        box-shadow: 0 2px 8px rgba(255, 215, 0, 0.4);
+    }
+    100% {
+        box-shadow: 0 2px 12px rgba(255, 215, 0, 0.7);
+    }
 }
 
 .gallery-description {
-    font-size: 0.9rem;
-    opacity: 0.9;
+    font-size: 0.95rem;
+    opacity: 0.95;
     margin-top: 8px;
+    color: #f0f0f0;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+    line-height: 1.4;
 }
 
 /* About Section */
@@ -646,6 +694,19 @@ body {
     
     .modal-info {
         padding: 20px;
+    }
+    
+    .gallery-price {
+        font-size: 1.2rem;
+        padding: 6px 12px;
+    }
+    
+    .gallery-title {
+        font-size: 1.1rem;
+    }
+    
+    .gallery-description {
+        font-size: 0.85rem;
     }
 }
 
